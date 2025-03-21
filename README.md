@@ -1,8 +1,8 @@
-# Nexus-Log-stica
-# Projeto Integrador (API)
+# Nexus-Logística
+# Nexus-Logística (API)
 # Índice
 
-* [Projeto](#projeto-API)
+* [Projeto](#Nexus-Logística)
 * [Equipe](#equipe)
 * [Objetivo do Projeto](#objetivo-do-projeto)
 * [Sprints](#Sprints)
