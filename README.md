@@ -58,7 +58,12 @@ Ao clicar você será redirecionado ao cronograma detalhado desse projeto, lá �
 <div align="center">
     
 ![sprint backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/Attback3.png)
+</div>
+
+
 # Priorização
+<div alingn= "right">
+ 
 ## Sprint 1
 ![product backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/BacklogP1.png)
 ## Sprint 2
