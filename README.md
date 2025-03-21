@@ -30,7 +30,7 @@ Aeroporto de São José dos Campos com base de dados de importações e exporta�
 
 
 # Objetivo do Projeto
-O Projeto tem como objetivo criar interfaces que permitam a visualização de cargas que tenham potencial para exportação pelo aeroporto de SJK.
+A Nexus Logística é uma empresa inovadora especializada em soluções logísticas inteligentes, ajudando negócios a otimizar suas operações e reduzir custos. Utilizando tecnologia avançada e análise de dados, oferecemos serviços como gestão de transportes, otimização de rotas, monitoramento de desempenho e implementação de dashboards estratégicos. 
 ## Tecnologias Utilizadas
 
  ### Tecnologias Específicas/Apoio
