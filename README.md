@@ -9,7 +9,6 @@
 * [Backlog da Sprints](#Backlog-das-Sprints)
 * [Priorização](#Priorização)
 * [Apresentação das Sprints](#Apresentação-das-sprints)
-* [Burndown](#Burndown)
 * [Competências desenvolvidas](#competências-desenvolvidas)
 
 
@@ -70,16 +69,6 @@ Ao clicar você será redirecionado ao cronograma detalhado desse projeto, lá �
 ![product backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/sprint4.png)
 </div>
 
-# Burndown
-### Sprint 1
-![sprint backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/Burndown.png)
-### Sprint 2
-![sprint backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/Burndown%232.png)
-### Sprint 3
-![sprint backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/Burndown3.png)
-### Sprint 4
-![sprint backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/Burndown4.png)
-  
 ## Sprint 1. 
 - [x] Criação do GitHub de cada membro;
 - [x] Estruturação do Repositório do projeto;
