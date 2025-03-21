@@ -33,10 +33,10 @@ A Nexus Logística é uma empresa inovadora especializada em soluções logísti
 ## Tecnologias Utilizadas
 
  ### Tecnologias Específicas/Apoio
- > GitHub
-  > Jira Software
-> Power BI
-> Slack
+> GitHub /
+> Jira Software /
+> Power BI /
+> Slack /
 # Sprints
 
 Sprint | Previsão | Status| Histórico|
