@@ -65,13 +65,13 @@ Ao clicar você será redirecionado ao cronograma detalhado desse projeto, lá �
 <div alingn= "right">
  
 ## Sprint 1
-![product backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/BacklogP1.png)
+![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory1.png)
 ## Sprint 2
-![product backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/Sprint2.png)
+![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory2.png)
 ## Sprint 3
-![product backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/3sprint.png)
+![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory2.png)
 ## Sprint 4
-![product backlog](https://github.com/Talesfn1/Projeto_API/blob/main/BackLogIMG/sprint4.png)
+![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory.png)
 </div>
 
 # Apresentação das Sprints
