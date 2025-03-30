@@ -64,13 +64,13 @@ Ao clicar você será redirecionado ao cronograma detalhado desse projeto, lá �
 # Priorização
 <div alingn= "right">
  
-## Sprint 1
+## User Story 1
 ![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory1.png)
-## Sprint 2
+## User Story 2
 ![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory2.png)
-## Sprint 3
+## User Story 3
 ![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory2.png)
-## Sprint 4
+## User Story 4
 ![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory.png)
 </div>
 
