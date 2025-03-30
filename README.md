@@ -62,17 +62,23 @@ Ao clicar você será redirecionado ao cronograma detalhado desse projeto, lá �
 
 
 # Priorização
-<div alingn= "right">
- 
+
+<div style="text-align: right;">
+
 ## User Story 1
-![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory1.png)
+<img src="https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory1.png" alt="User Story 1" width="400">
+
 ## User Story 2
-![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory2.png)
+<img src="https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory2.png" alt="User Story 2" width="400">
+
 ## User Story 3
-![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory2.png)
+<img src="https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory2.png" alt="User Story 3" width="400">
+
 ## User Story 4
-![product backlog](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory.png)
+<img src="https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Imagens/Userstory.png" alt="User Story 4" width="400">
+
 </div>
+
 
 # Apresentação das Sprints
 #### Apresentação da Sprint 1 [(clique aqui)](https://github.com/Talesfn1/Projeto_API/blob/main/Projeto%20-%20API%20Slide%201.pdf)
