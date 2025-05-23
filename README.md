@@ -44,8 +44,8 @@ Sprint | Previsão | Status| Histórico|
 |01| 04/04/2025 | A Fazer |[Ver Relatório](https://github.com/Talesfn1/Nexus-Log-stica/blob/main/Dados/API3_Relatorio1.pdf) | 
 |02| 09/05/2025| A Fazer |[Ver Relatório](https://github.com/Talesfn1/Projeto_API/blob/main/Relatorios/Relat%C3%B3rio%20sprint%202.pdf) | 
 |03| 30/05/2025 | A Fazer |[Ver Relatório](https://github.com/Talesfn1/Projeto_API/blob/main/Relatorios/relatorio%20sprint%203.pdf) | 
-|04| 26/06/2025 | A Fazer |[Ver Relatório](https://github.com/Talesfn1/Projeto_API/blob/main/Relatorios/Relat%C3%B3rio%204.pdf)  | 
-|Feira de Soluções|29/05/2025 | A Fazer |[Ver Relatório](https://fatecsjc-prd.azurewebsites.net/downloads/estagio/modelo_relatorio_estagio_gpi.docx) | 
+|04| 17/06/2025 | A Fazer |[Ver Relatório](https://github.com/Talesfn1/Projeto_API/blob/main/Relatorios/Relat%C3%B3rio%204.pdf)  | 
+|Feira de Soluções|17/06/2025 | A Fazer |[Ver Relatório](https://fatecsjc-prd.azurewebsites.net/downloads/estagio/modelo_relatorio_estagio_gpi.docx) | 
 
 ## Cronograma
 Ao clicar você será redirecionado ao cronograma detalhado desse projeto, lá é possível encontra as datas das atividades, o responsável por cada atividade, o estágio em que cada atividade se encontra e a qual Sprint cada atividade pertence.
