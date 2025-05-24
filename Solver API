@@ -1,0 +1,317 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOZDgityvWE9HHydgKWgRJZ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Talesfn1/Nexus-Log-stica/blob/main/Solver%20API\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ncbj--igAX9i",
+        "outputId": "03057c65-8761-453f-bb74-7a5a7aba14b1"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Collecting pulp\n",
+            "  Downloading pulp-3.1.1-py3-none-any.whl.metadata (1.3 kB)\n",
+            "Downloading pulp-3.1.1-py3-none-any.whl (16.4 MB)\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m16.4/16.4 MB\u001b[0m \u001b[31m72.6 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hInstalling collected packages: pulp\n",
+            "Successfully installed pulp-3.1.1\n"
+          ]
+        }
+      ],
+      "source": [
+        "!pip install pulp"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from pulp import LpProblem, LpMinimize, LpVariable, lpSum, LpStatus, value"
+      ],
+      "metadata": {
+        "id": "vAgrQfqpAfvS"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "capacidades = [17000000, 12500000, 19500000]\n",
+        "\n",
+        "demandas = [\n",
+        "    7800.0, 5400.0, 5400.0, 404700.0, 615300.0, 768300.0, 3300.0, 825600.0, 300300.0, 287700.0,\n",
+        "    589200.0, 508200.0, 4500.0, 14400.0, 472800.0, 371100.0, 11700.0, 765000.0, 444300.0, 3900.0,\n",
+        "    9600.0, 378600.0, 6000.0, 879000.0, 6900.0, 1060200.0, 754200.0, 663000.0, 6000.0, 9300.0,\n",
+        "    610500.0, 7200.0, 6600.0, 484500.0, 647400.0, 0.0, 0.0, 0.0, 12600.0, 570300.0,\n",
+        "    528000.0, 707400.0, 556800.0, 559200.0, 456900.0, 12300.0, 357900.0, 356100.0, 3000.0, 539700.0, 9600.0\n",
+        "]\n",
+        "\n",
+        "custos = [\n",
+        "    [1.76, 1.89, 2.72, 2.20, 1.99, 1.84, 1.73, 1.82, 2.28, 1.52, 2.63, 1.38, 1.29, 1.25, 1.33, 1.30, 1.14, 1.26, 1.52, 1.40, 1.29, 1.48, 1.36, 1.45, 1.53, 1.50, 1.53, 1.39, 1.26, 1.19, 1.44, 1.26, 1.46, 1.53, 1.46, None, None, None, 1.23, 1.21, 1.19, 1.17, 1.15, 1.71, 1.70, 1.71, 3.59, 3.74, 2.92, 2.94, 2.71],\n",
+        "    [None, None, None, None, 3.83, None, None, 3.76, 3.77, 3.35, 3.87, None, None, None, None, None, None, None, None, None, None, None, None, 2.51, None, 3.21, 3.77, 3.34, 3.02, 2.14, 3.32, 2.45, 1.52, 3.80, 3.64, 2.07, 2.13, 2.18, 1.87, 1.83, 1.79, 1.77, 1.84, None, None, None, 1.46, 1.43, 1.51, 1.53, 1.52],\n",
+        "    [2.36, 2.46, 2.72, 2.29, 2.29, 2.68, 2.19, 2.64, 2.11, 3.49, 1.81, None, None, None, None, None, None, None, 3.55, 3.40, 3.01, 3.59, 4.91, 2.86, 5.26, 3.53, 4.05, 2.99, 4.83, None, 3.76, 3.44, 2.95, 3.56, 3.36, 1.48, 1.44, 1.50, None, None, None, None, None, 2.15, 2.12, 1.89, 1.20, 1.19, 1.02, 1.14, 0.82]\n",
+        "]"
+      ],
+      "metadata": {
+        "id": "bef-yswpBzgw"
+      },
+      "execution_count": 3,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num_fabricas = len(capacidades)\n",
+        "num_clientes = len(demandas)"
+      ],
+      "metadata": {
+        "id": "Dl89EVXfB9YW"
+      },
+      "execution_count": 4,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "modelo = LpProblem(\"Problema_de_Transporte\", LpMinimize)"
+      ],
+      "metadata": {
+        "id": "4E5VmCWbCIIO"
+      },
+      "execution_count": 5,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = {(i, j): LpVariable(f\"x_{i}_{j}\", lowBound=0, cat='Continuous')\n",
+        "     for i in range(num_fabricas)\n",
+        "     for j in range(num_clientes)\n",
+        "     if custos[i][j] is not None}"
+      ],
+      "metadata": {
+        "id": "E0_7fJP1CJIm"
+      },
+      "execution_count": 6,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "modelo += lpSum(x[i, j] * custos[i][j] for (i, j) in x), \"Custo_Total\""
+      ],
+      "metadata": {
+        "id": "qMHMD4fQCN3f"
+      },
+      "execution_count": 7,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for j in range(num_clientes):\n",
+        "    modelo += lpSum(x[i, j] for i in range(num_fabricas) if (i, j) in x) == demandas[j], f\"Demanda_cliente_{j}\"\n"
+      ],
+      "metadata": {
+        "id": "_FMGYneMCQ0H"
+      },
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(num_fabricas):\n",
+        "    modelo += lpSum(x[i, j] for j in range(num_clientes) if (i, j) in x) <= capacidades[i], f\"Capacidade_Fabrica_{i+1}\""
+      ],
+      "metadata": {
+        "id": "SsnfjXM5CTcu"
+      },
+      "execution_count": 14,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "modelo.solve()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sK6NQ2riCVq2",
+        "outputId": "8b9b36d9-c2bc-44e2-9b87-6e2f00a064ce"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "1"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 15
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(f\"Status: {LpStatus[modelo.status]}\")\n",
+        "print(f\"Custo Total: R$ {value(modelo.objective):,.2f}\\n\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z3LY2TFrCWuX",
+        "outputId": "bc00deba-6e84-4fc8-a8d2-17348d76d331"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Status: Optimal\n",
+            "Custo Total: R$ 24,877,182.00\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for (i, j) in x:\n",
+        "    if x[i, j].varValue > 0:\n",
+        "        print(f\"Fábrica {i+1} -> Cliente {j+1}: {x[i, j].varValue:.2f} unidades (Custo unitário: R$ {custos[i][j]})\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IZR403AKCbnv",
+        "outputId": "13eacafd-fc6e-480b-80fa-858d297c2e74"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Fábrica 1 -> Cliente 1: 7800.00 unidades (Custo unitário: R$ 1.76)\n",
+            "Fábrica 1 -> Cliente 2: 5400.00 unidades (Custo unitário: R$ 1.89)\n",
+            "Fábrica 1 -> Cliente 3: 5400.00 unidades (Custo unitário: R$ 2.72)\n",
+            "Fábrica 1 -> Cliente 4: 404700.00 unidades (Custo unitário: R$ 2.2)\n",
+            "Fábrica 1 -> Cliente 5: 615300.00 unidades (Custo unitário: R$ 1.99)\n",
+            "Fábrica 1 -> Cliente 6: 768300.00 unidades (Custo unitário: R$ 1.84)\n",
+            "Fábrica 1 -> Cliente 7: 3300.00 unidades (Custo unitário: R$ 1.73)\n",
+            "Fábrica 1 -> Cliente 8: 825600.00 unidades (Custo unitário: R$ 1.82)\n",
+            "Fábrica 1 -> Cliente 10: 287700.00 unidades (Custo unitário: R$ 1.52)\n",
+            "Fábrica 1 -> Cliente 12: 508200.00 unidades (Custo unitário: R$ 1.38)\n",
+            "Fábrica 1 -> Cliente 13: 4500.00 unidades (Custo unitário: R$ 1.29)\n",
+            "Fábrica 1 -> Cliente 14: 14400.00 unidades (Custo unitário: R$ 1.25)\n",
+            "Fábrica 1 -> Cliente 15: 472800.00 unidades (Custo unitário: R$ 1.33)\n",
+            "Fábrica 1 -> Cliente 16: 371100.00 unidades (Custo unitário: R$ 1.3)\n",
+            "Fábrica 1 -> Cliente 17: 11700.00 unidades (Custo unitário: R$ 1.14)\n",
+            "Fábrica 1 -> Cliente 18: 765000.00 unidades (Custo unitário: R$ 1.26)\n",
+            "Fábrica 1 -> Cliente 19: 444300.00 unidades (Custo unitário: R$ 1.52)\n",
+            "Fábrica 1 -> Cliente 20: 3900.00 unidades (Custo unitário: R$ 1.4)\n",
+            "Fábrica 1 -> Cliente 21: 9600.00 unidades (Custo unitário: R$ 1.29)\n",
+            "Fábrica 1 -> Cliente 22: 378600.00 unidades (Custo unitário: R$ 1.48)\n",
+            "Fábrica 1 -> Cliente 23: 6000.00 unidades (Custo unitário: R$ 1.36)\n",
+            "Fábrica 1 -> Cliente 24: 879000.00 unidades (Custo unitário: R$ 1.45)\n",
+            "Fábrica 1 -> Cliente 25: 6900.00 unidades (Custo unitário: R$ 1.53)\n",
+            "Fábrica 1 -> Cliente 26: 1060200.00 unidades (Custo unitário: R$ 1.5)\n",
+            "Fábrica 1 -> Cliente 27: 754200.00 unidades (Custo unitário: R$ 1.53)\n",
+            "Fábrica 1 -> Cliente 28: 663000.00 unidades (Custo unitário: R$ 1.39)\n",
+            "Fábrica 1 -> Cliente 29: 6000.00 unidades (Custo unitário: R$ 1.26)\n",
+            "Fábrica 1 -> Cliente 30: 9300.00 unidades (Custo unitário: R$ 1.19)\n",
+            "Fábrica 1 -> Cliente 31: 610500.00 unidades (Custo unitário: R$ 1.44)\n",
+            "Fábrica 1 -> Cliente 32: 7200.00 unidades (Custo unitário: R$ 1.26)\n",
+            "Fábrica 1 -> Cliente 33: 6600.00 unidades (Custo unitário: R$ 1.46)\n",
+            "Fábrica 1 -> Cliente 34: 484500.00 unidades (Custo unitário: R$ 1.53)\n",
+            "Fábrica 1 -> Cliente 35: 647400.00 unidades (Custo unitário: R$ 1.46)\n",
+            "Fábrica 1 -> Cliente 39: 12600.00 unidades (Custo unitário: R$ 1.23)\n",
+            "Fábrica 1 -> Cliente 40: 570300.00 unidades (Custo unitário: R$ 1.21)\n",
+            "Fábrica 1 -> Cliente 41: 528000.00 unidades (Custo unitário: R$ 1.19)\n",
+            "Fábrica 1 -> Cliente 42: 707400.00 unidades (Custo unitário: R$ 1.17)\n",
+            "Fábrica 1 -> Cliente 43: 556800.00 unidades (Custo unitário: R$ 1.15)\n",
+            "Fábrica 1 -> Cliente 44: 559200.00 unidades (Custo unitário: R$ 1.71)\n",
+            "Fábrica 1 -> Cliente 45: 456900.00 unidades (Custo unitário: R$ 1.7)\n",
+            "Fábrica 1 -> Cliente 46: 12300.00 unidades (Custo unitário: R$ 1.71)\n",
+            "Fábrica 3 -> Cliente 9: 300300.00 unidades (Custo unitário: R$ 2.11)\n",
+            "Fábrica 3 -> Cliente 11: 589200.00 unidades (Custo unitário: R$ 1.81)\n",
+            "Fábrica 3 -> Cliente 47: 357900.00 unidades (Custo unitário: R$ 1.2)\n",
+            "Fábrica 3 -> Cliente 48: 356100.00 unidades (Custo unitário: R$ 1.19)\n",
+            "Fábrica 3 -> Cliente 49: 3000.00 unidades (Custo unitário: R$ 1.02)\n",
+            "Fábrica 3 -> Cliente 50: 539700.00 unidades (Custo unitário: R$ 1.14)\n",
+            "Fábrica 3 -> Cliente 51: 9600.00 unidades (Custo unitário: R$ 0.82)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(num_fabricas):\n",
+        "    total_fabrica = sum(x[i,j].varValue for j in range(num_clientes) if (i,j) in x)\n",
+        "    print(f\"Fábrica {i+1} total enviada: {total_fabrica:.2f}\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Wt8q2IPNDCe_",
+        "outputId": "7c4a5613-163a-466a-d6c1-e66811dee8c6"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Fábrica 1 total enviada: 14451900.00\n",
+            "Fábrica 2 total enviada: 0.00\n",
+            "Fábrica 3 total enviada: 2155800.00\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
