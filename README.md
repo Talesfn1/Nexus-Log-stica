@@ -81,7 +81,7 @@ Ao clicar você será redirecionado ao cronograma detalhado desse projeto, lá �
 
 ## Hard Skill (saber tecnológico)
 <details>
-<summary>Hard Skill desenvolvidas</summary>
+<summary>Hard Skills desenvolvidas</summary>
   
 | Tecnologia/Metodologia | Classificação |
 | ---------------------- | ------------- |
